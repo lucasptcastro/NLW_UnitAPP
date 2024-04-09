@@ -1,10 +1,13 @@
 import { colors } from "@/styles/colors";
 import { ReactNode } from "react";
-import { TextInput, TextInputProps, View } from "react-native";
+import { TextInput, TextInputProps, View, ViewProps } from "react-native";
 
-function Input({ children }: { children: ReactNode }) {
+function Input({ children, ...rest }: { children: ReactNode }) {
   return (
-    <View className="w-full h-14 flex-row items-center gap-3 p-3 border border-green-400 rounded-lg">
+    <View
+      className="w-full h-14 flex-row items-center p-3 border border-green-400 rounded-lg space-x-3"
+      {...rest}
+    >
       {children}
     </View>
   );
