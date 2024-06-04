@@ -9,6 +9,11 @@ import { useState } from "react";
 import { api } from "@/server/api";
 import { useBadgeStore } from "@/store/badge-store";
 
+import { OneSignal } from "react-native-onesignal";
+
+OneSignal.initialize("eb7ac1bc-7bb6-4ef1-a586-601d14776a56");
+OneSignal.Notifications.requestPermission(true);
+
 export default function Home() {
   const [code, setCode] = useState("");
   const [isLoading, setIsLoading] = useState(false);
